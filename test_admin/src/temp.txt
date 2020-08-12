@@ -1,0 +1,103 @@
+// const express = require("express");
+// const cors = require("cors");
+// var faker = require("faker");
+
+// const app = express();
+
+// var corsOptions = {
+//   origin: "*",
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   preflightContinue: false,
+//   // "Access-Control-Expose-Headers": "X-Total-Count",
+//   // "Access-Control-Expose-Headers": "Content-Range",
+//   // "Authorization": "SRTRDFVESGNJYTUKTYTHRG",
+//   optionsSuccessStatus: 204,
+// };
+
+// app.use(cors(corsOptions));
+// app.use(express.json());
+
+// app.get("/users", (req, res) => {
+//   let users = [];
+
+//   for (let i = 0; i < 10; i++) {
+//     let id = faker.random.uuid();
+//     let name = faker.name.findName();
+//     let email = faker.internet.email();
+//     let phone = faker.phone.phoneNumber();
+//     let country = faker.address.county();
+
+//     users.push({
+//       id: id,
+//       name: name,
+//       email: email,
+//       phone: phone,
+//       country: country,
+//     });
+//   }
+
+//   // res.setHeader('Access-Control-Expose-Headers', 'X-Total-Count');
+//   // res.setHeader("X-Total-Count", "10");
+//   res.send(users);
+// });
+
+// app.listen(4000, () => {
+//   console.log("Server is listening at PORT 4000");
+// });
+// ***************************************************************************************
+// import { Admin, Resource, fetchUtils } from "react-admin";
+// import Dashboard from "./Dashboard";
+// import React from "react";
+// import "./App.css";
+// // import jsonServerProvider from "ra-data-json-server";
+// import { UserList } from "./users";
+// import dataProvider from "./dataProvider";
+
+// // const httpClient = (url, options = {}) => {
+// //   if (!options.headers) {
+// //     options.headers = new Headers({ Accept: "application/json" });
+// //   }
+
+// //   options.headers.set("X-Custom-Header", "foobar");
+// //   return fetchUtils.fetchJson(url, options);
+// // };
+// // const dataProvider = jsonServerProvider("http://localhost:4000", httpClient);
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Admin dashboard={Dashboard} dataProvider={dataProvider}>
+//         <Resource name="users" list={UserList} />
+//       </Admin>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+***************************************************************
+// import * as React from "react";
+// import { List, Datagrid, TextField, EmailField } from 'react-admin';
+// import jsonServerProvider from "../src/dataProvider.js";
+
+// const dataProvider = jsonServerProvider;
+// dataProvider.getList("users").then((response) => {
+//   console.log(response.data);
+//   userList = response.data;
+// });
+
+// export const UserList = props => (
+//     <List {...props}>
+//         <Datagrid rowClick="edit">
+//             <TextField source="id" />
+//             <TextField source="name" />
+//             <TextField source="username" />
+//             <EmailField source="email" />
+//             <TextField source="address.street" />
+//             <TextField source="phone" />
+//             <TextField source="website" />
+//             <TextField source="company.name" />
+//         </Datagrid>
+//     </List>
+// );
+
